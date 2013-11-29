@@ -16,28 +16,49 @@ Whereas the Content Resolver provides an abstraction from the application's Cont
 Content Providers provide an interface for publishing and consuming data, based around a simple URI addressing model using the content:// schema. They enable you to decouble your application layers from the underlying data layers, making your application data-source agnostic by abstracting the underlying data source.
 
 <b><u>Whats is in this project ?</u></b>
-	This project has 3 modules. SingleTable, TwoTables, JoinTables. Each project builds on top of another by adding few things to previous one.
+
+This project has 3 modules. SingleTable, TwoTables, JoinTables. Each project builds on top of another by adding few things to previous one.
 
 <b><i>SingleTable</i></b>
-	<p>This projects introduces various concepts like</p> 
-		1. SQLiteDatabase (Helper ?)<br/>
-		2. Person Model / Table<br/>
-		3. ContentProvider (Providing a interface to get data without knowing the undelying knowledge of storage)<br/>
-		4. Activity (Displays the ListView and some buttons)<br/>
-		5. ListView (Displaying the person from the database)<br/>
-		6. CursorAdapter (The thing backing the ListView)<br/>
-		7. CursorLoader (Async Loading of all objects from person table)<br/>
+
+<p>This projects introduces various concepts like</p> 
+	1. SQLiteDatabase (Helper ?)<br/>
+	2. Person Model / Table<br/>
+	3. ContentProvider (Providing a interface to get data without knowing the undelying knowledge of storage)<br/>
+	4. Activity (Displays the ListView and some buttons)<br/>
+	5. ListView (Displaying the person from the database)<br/>
+	6. CursorAdapter (The thing backing the ListView)<br/>
+	7. CursorLoader (Async Loading of all objects from person table)<br/>
 
 <b><i>TwoTables</i></b>
-	This project adds on to previous project by<p/>
-		1. Edited - Added a new URI to ContentProvider<br/>
-		2. Added - Department Model / Table<br/>
-		3. Added - Activity (Displays ListView with some buttons)<br/>
-		4. Added - ListView (Displays the departments from database)<br/>
-		5. Added - CursorAdapter (The backing model for ListView)<br/>
-		6. Added - CursorLoader (Async Loading of all objects from department table)<br/>
-					
 
+<p>This project adds on to previous project by</p>
+	1. Edited - Added a new URI to ContentProvider<br/>
+	2. Added - Department Model / Table<br/>
+	3. Added - Activity (Displays ListView with some buttons)<br/>
+	4. Added - ListView (Displays the departments from database)<br/>
+	5. Added - CursorAdapter (The backing model for ListView)<br/>
+	6. Added - CursorLoader (Async Loading of all objects from department table)<br/>
+					
+<b><i>JoinTables</i></b>
+
+<p>This project adds on to previous project by</p>
+	1. Edited - Added a new URI to ContentProvider
+	2. Added - Helper Methods to help in join
+	3. <b>IMPORTANT:</b>
+	<code>
+	private void notifyUris(Uri itemUri, ContentObserver contentObserver) {
+        	getContext().getContentResolver().notifyChange(itemUri, contentObserver);
+        	getContext().getContentResolver().notifyChange(URI_PERSONS_DEPARTMENTS, contentObserver);
+    	}
+	</code>
+
+	3. Added - Activity (Displays ListView with some buttons)<br/>
+        4. Added - ListView (Displays the join of person and departments from database)<br/>
+        5. Added - CursorAdapter (The backing model for ListView)<br/>
+        6. Added - CursorLoader (Async Loading of all objects from person and department table)<br/>
+
+<p>	
 <b><u>The Life of a Query</u></b>
 
 So what exactly is the step-by-step process behind a simple query? As described above, when you query data from your database via the content provider, you don't communicate with the provider directly. Instead, you use the Content Resolver object to communicate with the provider. The specific sequence of events that occurs when a query is made is given below:
