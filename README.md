@@ -19,23 +19,23 @@ Content Providers provide an interface for publishing and consuming data, based 
 	This project has 3 modules. SingleTable, TwoTables, JoinTables. Each project builds on top of another by adding few things to previous one.
 
 <b><i>SingleTable</i></b>
-	This projects introduces various concepts like 
-		1. SQLiteDatabase (Helper ?)
-		2. Person Model / Table
-		3. ContentProvider (Providing a interface to get data without knowing the undelying knowledge of storage)
-		4. Activity (Displays the ListView and some buttons)
-		5. ListView (Displaying the person from the database)
-		6. CursorAdapter (The thing backing the ListView)
-		7. CursorLoader (Async Loading of all objects from person table)
+	<p>This projects introduces various concepts like</p> 
+		1. SQLiteDatabase (Helper ?)<br/>
+		2. Person Model / Table<br/>
+		3. ContentProvider (Providing a interface to get data without knowing the undelying knowledge of storage)<br/>
+		4. Activity (Displays the ListView and some buttons)<br/>
+		5. ListView (Displaying the person from the database)<br/>
+		6. CursorAdapter (The thing backing the ListView)<br/>
+		7. CursorLoader (Async Loading of all objects from person table)<br/>
 
 <b><i>TwoTables</i></b>
-	This project adds on to previous project by
-		1. Edited - Added a new URI to ContentProvider
-		2. Added - Department Model / Table
-		3. Added - Activity (Displays ListView with some buttons)
-		4. Added - ListView (Displays the departments from database)
-		5. Added - CursorAdapter (The backing model for ListView)
-		6. Added - CursorLoader (Async Loading of all objects from department table)
+	This project adds on to previous project by<p/>
+		1. Edited - Added a new URI to ContentProvider<br/>
+		2. Added - Department Model / Table<br/>
+		3. Added - Activity (Displays ListView with some buttons)<br/>
+		4. Added - ListView (Displays the departments from database)<br/>
+		5. Added - CursorAdapter (The backing model for ListView)<br/>
+		6. Added - CursorLoader (Async Loading of all objects from department table)<br/>
 					
 
 <b><u>The Life of a Query</u></b>
