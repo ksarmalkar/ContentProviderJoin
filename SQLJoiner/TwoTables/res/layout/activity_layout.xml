@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical" >
+
+    <LinearLayout
+            android:id="@+id/group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:weightSum="3"
+            >
+
+        <Button
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_new"
+                android:layout_weight="1"
+                android:onClick="onClick"/>
+
+        <Button
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_last"
+                android:layout_weight="1"
+                android:onClick="onClick"/>
+
+        <Button
+                android:id="@+id/update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/update_last"
+                android:layout_weight="1"
+                android:onClick="onClick"/>
+
+    </LinearLayout>
+
+    <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_below="@id/group"
+            android:layout_above="@+id/bottom_group"
+            android:animateLayoutChanges="true"
+            />
+
+    <LinearLayout
+        android:id="@+id/bottom_group"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/departments_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/departments"
+            android:layout_weight="1"
+            android:onClick="onClick"/>
+        <Button
+            android:id="@+id/join_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/join"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            />
+    </LinearLayout>
+</RelativeLayout>

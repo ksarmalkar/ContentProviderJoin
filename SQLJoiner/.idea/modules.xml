@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JoinTables/JoinTables.iml" filepath="$PROJECT_DIR$/JoinTables/JoinTables.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SQLJoiner.iml" filepath="$PROJECT_DIR$/SQLJoiner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SingleTable/SingleTable.iml" filepath="$PROJECT_DIR$/SingleTable/SingleTable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TwoTables/TwoTables.iml" filepath="$PROJECT_DIR$/TwoTables/TwoTables.iml" />
+    </modules>
+  </component>
+</project>
+

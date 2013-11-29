@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:minHeight="?android:attr/listPreferredItemHeight"
+        >
+
+    <TextView android:id="@+id/first_name_text"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="?android:attr/listPreferredItemPaddingStart"
+              android:layout_marginTop="8dip"
+              android:textAppearance="?android:attr/textAppearanceListItem"
+            />
+
+    <TextView android:id="@+id/last_name_text"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/first_name_text"
+              android:layout_alignStart="@+id/first_name_text"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+
+    <TextView android:id="@+id/description_text"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/last_name_text"
+              android:layout_alignStart="@+id/first_name_text"
+              android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            />
+
+    <Button android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/delete_row"
+            android:layout_marginStart="?android:attr/listPreferredItemPaddingEnd"
+            />
+
+
+</RelativeLayout>

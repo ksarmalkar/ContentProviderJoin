@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Two Tables</string>
+    <string name="add_new">Add New</string>
+    <string name="delete_last">Delete Last</string>
+    <string name="update_last">Update Last</string>
+    <string name="departments">Departments</string>
+    <string name="join">Join</string>
+    <string name="delete_row">- Row</string>
+    <string name="person">Persons</string>
+    <string name="back">Back</string>
+</resources>
