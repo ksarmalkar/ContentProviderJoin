@@ -22,41 +22,40 @@ This project has 3 modules. SingleTable, TwoTables, JoinTables. Each project bui
 <b><i>SingleTable</i></b>
 
 <p>This projects introduces various concepts like</p> 
-	1. SQLiteDatabase (Helper ?)<br/>
-	2. Person Model / Table<br/>
-	3. ContentProvider (Providing a interface to get data without knowing the undelying knowledge of storage)<br/>
-	4. Activity (Displays the ListView and some buttons)<br/>
-	5. ListView (Displaying the person from the database)<br/>
-	6. CursorAdapter (The thing backing the ListView)<br/>
-	7. CursorLoader (Async Loading of all objects from person table)<br/>
+	1. SQLiteDatabase (Helper ?)
+	2. Person Model / Table
+	3. ContentProvider (Providing a interface to get data without knowing the undelying knowledge of storage)
+	4. Activity (Displays the ListView and some buttons)
+	5. ListView (Displaying the person from the database)
+	6. CursorAdapter (The thing backing the ListView)
+	7. CursorLoader (Async Loading of all objects from person table)
 
 <b><i>TwoTables</i></b>
 
 <p>This project adds on to previous project by</p>
-	1. Edited - Added a new URI to ContentProvider<br/>
-	2. Added - Department Model / Table<br/>
-	3. Added - Activity (Displays ListView with some buttons)<br/>
-	4. Added - ListView (Displays the departments from database)<br/>
-	5. Added - CursorAdapter (The backing model for ListView)<br/>
-	6. Added - CursorLoader (Async Loading of all objects from department table)<br/>
+	1. Edited - Added a new URI to ContentProvider
+	2. Added - Department Model / Table
+	3. Added - Activity (Displays ListView with some buttons)
+	4. Added - ListView (Displays the departments from database)
+	5. Added - CursorAdapter (The backing model for ListView)
+	6. Added - CursorLoader (Async Loading of all objects from department table)
 					
 <b><i>JoinTables</i></b>
 
 <p>This project adds on to previous project by</p>
 	1. Edited - Added a new URI to ContentProvider
 	2. Added - Helper Methods to help in join
-	3. <b>IMPORTANT:</b>
-	<code>
+	3. IMPORTANT:
+	
 	private void notifyUris(Uri itemUri, ContentObserver contentObserver) {
         	getContext().getContentResolver().notifyChange(itemUri, contentObserver);
         	getContext().getContentResolver().notifyChange(URI_PERSONS_DEPARTMENTS, contentObserver);
     	}
-	</code>
 
-	3. Added - Activity (Displays ListView with some buttons)<br/>
-        4. Added - ListView (Displays the join of person and departments from database)<br/>
-        5. Added - CursorAdapter (The backing model for ListView)<br/>
-        6. Added - CursorLoader (Async Loading of all objects from person and department table)<br/>
+	4. Added - Activity (Displays ListView with some buttons)
+        5. Added - ListView (Displays the join of person and departments from database)
+        6. Added - CursorAdapter (The backing model for ListView)
+        7. Added - CursorLoader (Async Loading of all objects from person and department table)
 
 <p>	
 <b><u>The Life of a Query</u></b>
