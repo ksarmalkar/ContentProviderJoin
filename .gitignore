@@ -1,0 +1,8 @@
+SQLJoiner/.idea/*
+SQLJoiner/JoinTables/JoinTables.iml
+SQLJoiner/JoinTables/gen/*
+SQLJoiner/SingleTable/SingleTable.iml
+SQLJoiner/SingleTable/gen/*
+SQLJoiner/TwoTables/TwoTables.iml
+SQLJoiner/TwoTables/gen/*
+SQLJoiner/out/*
