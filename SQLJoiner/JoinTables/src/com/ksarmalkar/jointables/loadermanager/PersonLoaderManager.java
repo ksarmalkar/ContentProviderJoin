@@ -2,14 +2,12 @@ package com.ksarmalkar.jointables.loadermanager;
 
 import android.app.Activity;
 import android.app.LoaderManager;
-import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
-import com.ksarmalkar.jointables.contentprovider.ProjectProvider;
-import com.ksarmalkar.jointables.model.Person;
+import com.ksarmalkar.jointables.loader.PersonLoader;
 
 public class PersonLoaderManager implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -34,7 +32,7 @@ public class PersonLoaderManager implements LoaderManager.LoaderCallbacks<Cursor
          * sortOrder determines the order of rows. Passing null will use the default sort order, which may be unordered.
          * To back a ListView with a Cursor, the cursor must contain a column named _ID.
          */
-        return new CursorLoader(activity, ProjectProvider.URI_PERSONS, Person.FIELDS, null, null, null);
+        return new PersonLoader(activity, null, null, null);
     }
 
     /**

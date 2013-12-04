@@ -2,13 +2,13 @@ package com.ksarmalkar.jointables.loadermanager;
 
 import android.app.Activity;
 import android.app.LoaderManager;
-import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.jointables.contentprovider.ProjectProvider;
+import com.ksarmalkar.jointables.loader.JoinLoader;
 import com.ksarmalkar.jointables.model.Department;
 import com.ksarmalkar.jointables.model.Person;
 
@@ -35,7 +35,7 @@ public class JoinLoaderManager implements LoaderManager.LoaderCallbacks<Cursor> 
          * sortOrder determines the order of rows. Passing null will use the default sort order, which may be unordered.
          * To back a ListView with a Cursor, the cursor must contain a column named _ID.
          */
-        return new CursorLoader(activity, ProjectProvider.URI_PERSONS_DEPARTMENTS, createdCombinedProjection(), null, null, null);
+        return new JoinLoader(activity, null, null, null);
     }
 
     /**
@@ -67,22 +67,6 @@ public class JoinLoaderManager implements LoaderManager.LoaderCallbacks<Cursor> 
             Log.v(TAG,"OnLoadFinished: mAdapter is null");
     }
 
-    private String[] createdCombinedProjection() {
-        String personProjection[] = Person.getQualifiedColumns();
-        String departmentProjection[] = Department.getQualifiedColumns();
-        int personLength = personProjection.length;
-        int departmentLength = departmentProjection.length;
 
-        String projection[] = new String[personLength + departmentLength];
-        for (int i = 0; i < personLength; i++) {
-            projection[i] = personProjection[i];
-        }
-
-        for (int i = 0; i < departmentLength; i++) {
-            projection[personLength + i] = departmentProjection[i];
-        }
-
-        return projection;
-    }
 }
 
