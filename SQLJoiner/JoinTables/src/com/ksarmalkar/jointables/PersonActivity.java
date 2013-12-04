@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.jointables.contentprovider.ProjectProvider;
 import com.ksarmalkar.jointables.cursoradapter.PersonCursorAdapter;
-import com.ksarmalkar.jointables.loader.PersonLoaderManager;
+import com.ksarmalkar.jointables.loadermanager.PersonLoaderManager;
 import com.ksarmalkar.jointables.model.Department;
 import com.ksarmalkar.jointables.model.Person;
 

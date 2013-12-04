@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.jointables.cursoradapter.DepartmentCursorAdapter;
-import com.ksarmalkar.jointables.loader.DepartmentLoaderManager;
+import com.ksarmalkar.jointables.loadermanager.DepartmentLoaderManager;
 import com.ksarmalkar.jointables.model.Department;
 
 public class DepartmentActivity extends ListActivity {

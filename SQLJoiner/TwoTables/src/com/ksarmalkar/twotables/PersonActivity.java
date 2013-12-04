@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.twotables.contentprovider.ProjectProvider;
 import com.ksarmalkar.twotables.cursoradapter.PersonCursorAdapter;
-import com.ksarmalkar.twotables.loader.PersonLoaderManager;
+import com.ksarmalkar.twotables.loadermanager.PersonLoaderManager;
 import com.ksarmalkar.twotables.model.Department;
 import com.ksarmalkar.twotables.model.Person;
 

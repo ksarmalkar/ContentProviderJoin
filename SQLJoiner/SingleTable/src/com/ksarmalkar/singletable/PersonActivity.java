@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.singletable.contentprovider.ProjectProvider;
 import com.ksarmalkar.singletable.cursoradapter.PersonCursorAdapter;
-import com.ksarmalkar.singletable.loader.PersonLoaderManager;
+import com.ksarmalkar.singletable.loadermanager.PersonLoaderManager;
 import com.ksarmalkar.singletable.model.Person;
 
 import java.util.Random;

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.twotables.cursoradapter.DepartmentCursorAdapter;
-import com.ksarmalkar.twotables.loader.DepartmentLoaderManager;
+import com.ksarmalkar.twotables.loadermanager.DepartmentLoaderManager;
 import com.ksarmalkar.twotables.model.Department;
 
 public class DepartmentActivity extends ListActivity {

@@ -1,4 +1,4 @@
-package com.ksarmalkar.jointables.loader;
+package com.ksarmalkar.singletable.loadermanager;
 
 import android.app.Activity;
 import android.app.LoaderManager;
@@ -8,8 +8,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
-import com.ksarmalkar.jointables.contentprovider.ProjectProvider;
-import com.ksarmalkar.jointables.model.Person;
+import com.ksarmalkar.singletable.contentprovider.ProjectProvider;
+import com.ksarmalkar.singletable.model.Person;
 
 public class PersonLoaderManager implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -38,11 +38,11 @@ public class PersonLoaderManager implements LoaderManager.LoaderCallbacks<Cursor
     }
 
     /**
-     * Called when a previously created loader has finished its load. This assigns the new Cursor but does not close the previous one.
+     * Called when a previously created loadermanager has finished its load. This assigns the new Cursor but does not close the previous one.
      * This allows the system to keep track of the Cursor and manage it for us, optimizing where appropriate. This method is guaranteed
-     * to be called prior to the release of the last data that was supplied for this loader. At this point you should remove all use of
+     * to be called prior to the release of the last data that was supplied for this loadermanager. At this point you should remove all use of
      * the old data (since it will be released soon), but should not
-     * do your own release of the data since its loader owns it and will take care of that.
+     * do your own release of the data since its loadermanager owns it and will take care of that.
      * The framework would take of closing of old cursor once we return.
      */
     @Override
@@ -54,7 +54,7 @@ public class PersonLoaderManager implements LoaderManager.LoaderCallbacks<Cursor
     }
 
     /**
-     * This method is triggered when the loader is being reset and the loader  data is no longer available.
+     * This method is triggered when the loadermanager is being reset and the loadermanager  data is no longer available.
      * This is called when the last Cursor provided to onLoadFinished() above
      * is about to be closed. We need to make sure we are no longer using it.
      */
