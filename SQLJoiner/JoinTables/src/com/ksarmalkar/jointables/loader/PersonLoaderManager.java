@@ -9,18 +9,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.jointables.contentprovider.ProjectProvider;
-import com.ksarmalkar.jointables.model.Department;
 import com.ksarmalkar.jointables.model.Person;
 
-public class JoinLoader implements LoaderManager.LoaderCallbacks<Cursor> {
+public class PersonLoaderManager implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final String TAG = "LOADER_TAG";
     private Activity activity;
-    private SimpleCursorAdapter joinCursorAdapter;
+    private SimpleCursorAdapter personCursorAdapter;
 
-    public JoinLoader(Activity activity, SimpleCursorAdapter joinCursorAdapter){
+    public PersonLoaderManager(Activity activity, SimpleCursorAdapter personCursorAdapter){
         this.activity = activity;
-        this.joinCursorAdapter = joinCursorAdapter;
+        this.personCursorAdapter = personCursorAdapter;
     }
 
     @Override
@@ -35,7 +34,7 @@ public class JoinLoader implements LoaderManager.LoaderCallbacks<Cursor> {
          * sortOrder determines the order of rows. Passing null will use the default sort order, which may be unordered.
          * To back a ListView with a Cursor, the cursor must contain a column named _ID.
          */
-        return new CursorLoader(activity, ProjectProvider.URI_PERSONS_DEPARTMENTS, createdCombinedProjection(), null, null, null);
+        return new CursorLoader(activity, ProjectProvider.URI_PERSONS, Person.FIELDS, null, null, null);
     }
 
     /**
@@ -48,8 +47,8 @@ public class JoinLoader implements LoaderManager.LoaderCallbacks<Cursor> {
      */
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-        if(joinCursorAdapter !=null && cursor!=null)
-            joinCursorAdapter.swapCursor(cursor); //swap the new cursor in.
+        if(personCursorAdapter!=null && cursor!=null)
+            personCursorAdapter.swapCursor(cursor); //swap the new cursor in.
         else
             Log.v(TAG, "OnLoadFinished: mAdapter is null");
     }
@@ -61,28 +60,9 @@ public class JoinLoader implements LoaderManager.LoaderCallbacks<Cursor> {
      */
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-        if(joinCursorAdapter !=null)
-            joinCursorAdapter.swapCursor(null);
+        if(personCursorAdapter!=null)
+            personCursorAdapter.swapCursor(null);
         else
             Log.v(TAG,"OnLoadFinished: mAdapter is null");
     }
-
-    private String[] createdCombinedProjection() {
-        String personProjection[] = Person.getQualifiedColumns();
-        String departmentProjection[] = Department.getQualifiedColumns();
-        int personLength = personProjection.length;
-        int departmentLength = departmentProjection.length;
-
-        String projection[] = new String[personLength + departmentLength];
-        for (int i = 0; i < personLength; i++) {
-            projection[i] = personProjection[i];
-        }
-
-        for (int i = 0; i < departmentLength; i++) {
-            projection[personLength + i] = departmentProjection[i];
-        }
-
-        return projection;
-    }
 }
-

@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.twotables.contentprovider.ProjectProvider;
 import com.ksarmalkar.twotables.cursoradapter.PersonCursorAdapter;
-import com.ksarmalkar.twotables.loader.PersonLoader;
+import com.ksarmalkar.twotables.loader.PersonLoaderManager;
 import com.ksarmalkar.twotables.model.Department;
 import com.ksarmalkar.twotables.model.Person;
 
@@ -34,7 +34,7 @@ public class PersonActivity extends ListActivity {
         mAdapter = new PersonCursorAdapter(this,R.layout.person_layout, null, uiBindFrom, uiBindTo,0);
         setListAdapter(mAdapter);
         LoaderManager loaderManager = getLoaderManager();
-        loaderManager.initLoader(0, null, new PersonLoader(this, mAdapter));
+        loaderManager.initLoader(0, null, new PersonLoaderManager(this, mAdapter));
 
         findViewById(R.id.join_button).setVisibility(View.GONE);
 

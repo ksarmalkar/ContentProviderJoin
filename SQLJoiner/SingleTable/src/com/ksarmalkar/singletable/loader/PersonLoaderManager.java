@@ -1,4 +1,4 @@
-package com.ksarmalkar.jointables.loader;
+package com.ksarmalkar.singletable.loader;
 
 import android.app.Activity;
 import android.app.LoaderManager;
@@ -8,16 +8,16 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
-import com.ksarmalkar.jointables.contentprovider.ProjectProvider;
-import com.ksarmalkar.jointables.model.Person;
+import com.ksarmalkar.singletable.contentprovider.ProjectProvider;
+import com.ksarmalkar.singletable.model.Person;
 
-public class PersonLoader implements LoaderManager.LoaderCallbacks<Cursor> {
+public class PersonLoaderManager implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final String TAG = "LOADER_TAG";
     private Activity activity;
     private SimpleCursorAdapter personCursorAdapter;
 
-    public PersonLoader(Activity activity, SimpleCursorAdapter personCursorAdapter){
+    public PersonLoaderManager(Activity activity, SimpleCursorAdapter personCursorAdapter){
         this.activity = activity;
         this.personCursorAdapter = personCursorAdapter;
     }

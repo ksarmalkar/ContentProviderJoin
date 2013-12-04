@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.jointables.cursoradapter.DepartmentCursorAdapter;
-import com.ksarmalkar.jointables.loader.DepartmentLoader;
+import com.ksarmalkar.jointables.loader.DepartmentLoaderManager;
 import com.ksarmalkar.jointables.model.Department;
 
 public class DepartmentActivity extends ListActivity {
@@ -27,7 +27,7 @@ public class DepartmentActivity extends ListActivity {
         mAdapter = new DepartmentCursorAdapter(this,R.layout.person_layout, null, uiBindFrom, uiBindTo,0);
         setListAdapter(mAdapter);
         LoaderManager loaderManager = getLoaderManager();
-        loaderManager.initLoader(1, null, new DepartmentLoader(this, mAdapter));
+        loaderManager.initLoader(1, null, new DepartmentLoaderManager(this, mAdapter));
 
         findViewById(R.id.group).setVisibility(View.GONE);
         final Button backButton = (Button) findViewById(R.id.departments_button);

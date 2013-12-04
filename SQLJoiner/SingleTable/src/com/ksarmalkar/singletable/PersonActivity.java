@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.singletable.contentprovider.ProjectProvider;
 import com.ksarmalkar.singletable.cursoradapter.PersonCursorAdapter;
-import com.ksarmalkar.singletable.loader.PersonLoader;
+import com.ksarmalkar.singletable.loader.PersonLoaderManager;
 import com.ksarmalkar.singletable.model.Person;
 
 import java.util.Random;
@@ -32,7 +32,7 @@ public class PersonActivity extends ListActivity {
         mAdapter = new PersonCursorAdapter(this,R.layout.person_layout, null, uiBindFrom, uiBindTo,0);
         setListAdapter(mAdapter);
         LoaderManager loaderManager = getLoaderManager();
-        loaderManager.initLoader(0, null, new PersonLoader(this, mAdapter));
+        loaderManager.initLoader(0, null, new PersonLoaderManager(this, mAdapter));
 
         findViewById(R.id.bottom_group).setVisibility(View.GONE);
 

@@ -9,17 +9,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.twotables.contentprovider.ProjectProvider;
-import com.ksarmalkar.twotables.model.Department;
+import com.ksarmalkar.twotables.model.Person;
 
-public class DepartmentLoader implements LoaderManager.LoaderCallbacks<Cursor> {
+public class PersonLoaderManager implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final String TAG = "LOADER_TAG";
     private Activity activity;
-    private SimpleCursorAdapter departmentCursorAdapter;
+    private SimpleCursorAdapter personCursorAdapter;
 
-    public DepartmentLoader(Activity activity, SimpleCursorAdapter departmentCursorAdapter){
+    public PersonLoaderManager(Activity activity, SimpleCursorAdapter personCursorAdapter){
         this.activity = activity;
-        this.departmentCursorAdapter = departmentCursorAdapter;
+        this.personCursorAdapter = personCursorAdapter;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class DepartmentLoader implements LoaderManager.LoaderCallbacks<Cursor> {
          * sortOrder determines the order of rows. Passing null will use the default sort order, which may be unordered.
          * To back a ListView with a Cursor, the cursor must contain a column named _ID.
          */
-        return new CursorLoader(activity, ProjectProvider.URI_DEPARTMENTS, Department.FIELDS, null, null, null);
+        return new CursorLoader(activity, ProjectProvider.URI_PERSONS, Person.FIELDS, null, null, null);
     }
 
     /**
@@ -47,8 +47,8 @@ public class DepartmentLoader implements LoaderManager.LoaderCallbacks<Cursor> {
      */
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-        if(departmentCursorAdapter !=null && cursor!=null)
-            departmentCursorAdapter.swapCursor(cursor); //swap the new cursor in.
+        if(personCursorAdapter!=null && cursor!=null)
+            personCursorAdapter.swapCursor(cursor); //swap the new cursor in.
         else
             Log.v(TAG, "OnLoadFinished: mAdapter is null");
     }
@@ -60,10 +60,9 @@ public class DepartmentLoader implements LoaderManager.LoaderCallbacks<Cursor> {
      */
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-        if(departmentCursorAdapter !=null)
-            departmentCursorAdapter.swapCursor(null);
+        if(personCursorAdapter!=null)
+            personCursorAdapter.swapCursor(null);
         else
             Log.v(TAG,"OnLoadFinished: mAdapter is null");
     }
 }
-

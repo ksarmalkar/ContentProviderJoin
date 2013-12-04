@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.jointables.contentprovider.ProjectProvider;
 import com.ksarmalkar.jointables.cursoradapter.PersonCursorAdapter;
-import com.ksarmalkar.jointables.loader.PersonLoader;
+import com.ksarmalkar.jointables.loader.PersonLoaderManager;
 import com.ksarmalkar.jointables.model.Department;
 import com.ksarmalkar.jointables.model.Person;
 
@@ -34,7 +34,7 @@ public class PersonActivity extends ListActivity {
         mAdapter = new PersonCursorAdapter(this,R.layout.person_layout, null, uiBindFrom, uiBindTo,0);
         setListAdapter(mAdapter);
         LoaderManager loaderManager = getLoaderManager();
-        loaderManager.initLoader(0, null, new PersonLoader(this, mAdapter));
+        loaderManager.initLoader(0, null, new PersonLoaderManager(this, mAdapter));
 
     }
 

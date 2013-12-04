@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.SimpleCursorAdapter;
 import com.ksarmalkar.jointables.contentprovider.ProjectProvider;
 import com.ksarmalkar.jointables.cursoradapter.JoinCursorAdapter;
-import com.ksarmalkar.jointables.loader.JoinLoader;
+import com.ksarmalkar.jointables.loader.JoinLoaderManager;
 import com.ksarmalkar.jointables.model.Department;
 import com.ksarmalkar.jointables.model.Person;
 
@@ -36,7 +36,7 @@ public class JoinActivity extends ListActivity {
         mAdapter = new JoinCursorAdapter(this, R.layout.person_layout, null, uiBindFrom, uiBindTo,0);
         setListAdapter(mAdapter);
         LoaderManager loaderManager = getLoaderManager();
-        loaderManager.initLoader(2, null, new JoinLoader(this, mAdapter));
+        loaderManager.initLoader(2, null, new JoinLoaderManager(this, mAdapter));
 
 //        findViewById(R.id.group).setVisibility(View.GONE);
         final Button backButton = (Button) findViewById(R.id.departments_button);
